@@ -178,7 +178,7 @@ class PolylinePainter extends CustomPainter {
     var borderRadius = (borderPaint?.strokeWidth ?? 0) / 2;
     if (polylineOpt.isDotted) {
       var spacing = polylineOpt.strokeWidth * 1.5;
-      canvas.saveLayer(rect, Paint());
+//       canvas.saveLayer(rect, Paint());
       if (borderPaint != null && filterPaint != null) {
         _paintDottedLine(
             canvas, polylineOpt.offsets, borderRadius, spacing, borderPaint);
@@ -186,10 +186,10 @@ class PolylinePainter extends CustomPainter {
             canvas, polylineOpt.offsets, radius, spacing, filterPaint);
       }
       _paintDottedLine(canvas, polylineOpt.offsets, radius, spacing, paint);
-      canvas.restore();
+//       canvas.restore();
     } else {
       paint.style = PaintingStyle.stroke;
-      canvas.saveLayer(rect, Paint());
+//       canvas.saveLayer(rect, Paint());
       if (borderPaint != null && filterPaint != null) {
         borderPaint.style = PaintingStyle.stroke;
         _paintLine(canvas, polylineOpt.offsets, borderPaint);
@@ -197,7 +197,7 @@ class PolylinePainter extends CustomPainter {
         _paintLine(canvas, polylineOpt.offsets, filterPaint);
       }
       _paintLine(canvas, polylineOpt.offsets, paint);
-      canvas.restore();
+//       canvas.restore();
     }
   }
 
